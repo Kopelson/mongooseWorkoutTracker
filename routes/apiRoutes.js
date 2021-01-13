@@ -13,16 +13,21 @@ app.post("/api/workouts", ({body}, res) => {
     });
 })
 //Read
-//This searches all workouts, populates exercises array, 
-//and returns to the frontend a json of the result.
+//This searches all workouts and returns to the frontend a json of the result.
 app.get("/api/workouts", (req, res) => {
-  db.Workout.find({})
-    .populate("exercises")
+    db.Workout.aggregate([
+        {
+            $addFields: {
+                totalDuration: { $sum: "$exercises.duration" }
+            }
+        }
+    ])
     .then(workoutdb => {
-      res.json(workoutdb);
+        console.log(workoutdb);
+        res.json(workoutdb);
     })
     .catch(err => {
-      res.json(err);
+         res.json(err);
     });
 });
 //This grabs the last 7 workouts, populates the exercises array, 
@@ -32,12 +37,6 @@ app.get("/api/workouts/range", (req, res) => {
   db.Workout.aggregate([
     {$sort: {_id:1}},
     { $limit : 7 },
-    { $lookup: {
-      from: 'exercises',
-      localField: 'exercises',
-      foreignField: '_id',
-      as: "exercises"
-    }},
     {
       $addFields: {
         totalDuration: { $sum: "$exercises.duration" }
@@ -53,9 +52,8 @@ app.get("/api/workouts/range", (req, res) => {
 //Update
 //This adds exercises to the current workout.
 app.put("/api/workouts/:id", (req, res) => {
-  let workoutId = req.params.id
-    db.Exercise.create(req.body)
-    .then(({_id}) => db.Workout.findOneAndUpdate({_id: workoutId}, { $push: { exercises: _id } }, { new: true }))
+    let workoutId = req.params.id;
+    db.Workout.findOneAndUpdate({_id: workoutId}, { $push: { exercises: req.body } }, { new: true })
     .then(workoutdb => {
       res.json(workoutdb);
     })
