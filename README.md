@@ -83,3 +83,9 @@ morgan - HTTP request logger middleware for node.js
   <li> https://docs.mongodb.com/manual/ </li>
   <li> https://www.npmjs.com/package/morgan </li>
 </ul>
+
+## Credits
+* Trilogy Education Services for project setup
+
+## Badges
+<a href="https://img.shields.io/badge/CSS-19.0%25-yellow"><img alt="HTML Usage" src="https://img.shields.io/badge/CSS-19.0%25-yellow"></a> <a href="https://img.shields.io/badge/CSS-22.4%25-purple"><img alt="CSS Usage" src="https://img.shields.io/badge/CSS-22.4%25-purple"></a> <a href="https://img.shields.io/badge/JavaScript-58.6%25-yellow"><img alt="Javascript usage" src="https://img.shields.io/badge/JavaScript-58.6%25-yellow"></a><a href="https://img.shields.io/badge/Backend-Node.js-green"><img alt="Node.js" src="https://img.shields.io/badge/Backend-Node.js-green"></a> <a href="https://img.shields.io/badge/Backend-Express.js-green"><img alt="Express.js" src="https://img.shields.io/badge/Backend-Express.js-green"></a> <a href="https://img.shields.io/badge/Database-MongoDB-yellow"><img alt="database used MongoDB" src="https://img.shields.io/badge/Database-MongoDB-yellow"></a> <a href="https://img.shields.io/badge/Deployment-Heroku-purple"><img alt="deployed using Heroku" src="https://img.shields.io/badge/Deployment-Heroku-purple"></a>
