@@ -1,14 +1,16 @@
-# Mongoose Workout Tracker
+# Mongoose Workout Tracker : 
 
-## Description
-  <p>I used MongoDB, a document-oriented NoSQL database to develop, and Mongoose, an elegant mongodb object modeling for node.js, to create a backend to a full stack workout tracker application.</p>
+ I used MongoDB, a document-oriented NoSQL database to develop, and Mongoose, an elegant mongodb object modeling for node.js, to create a backend to a full stack workout tracker application.
 
 * Project link: https://stark-dusk-98563.herokuapp.com/
+
+## Overview
+
 ![FitnessTracker](https://user-images.githubusercontent.com/57735283/104526742-fbfd7500-55b7-11eb-9e4a-96e988c28d13.PNG)
 
 ![Main](https://user-images.githubusercontent.com/57735283/104496235-91cfda80-558d-11eb-9b58-a895a06347b2.PNG)
 
-## Overview
+
 <p>This is a full-stack workout tracker application. Uses a Mongo database with a Mongoose schema and handle routes with Express.</p>
 
 
